@@ -13,7 +13,6 @@ require 'banco.php';
     $senha=$_POST['senha'];
     $arquivo=$_FILES['file'];
     $arquivo=explode('.',$arquivo['name']);
-    // move_uploaded_file($arquivo['tmp_name'],'C:\wamp64\www\Program'.$arquivo['name']);
     $sql = "INSERT INTO pessoas (email, senha, arquivo) VALUES (?,?, ?)";
     $q = $pdo->prepare($sql);
     $q->execute(array($email, $senha, $arquivo));
